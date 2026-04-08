@@ -3,7 +3,7 @@
 //  Replace PROJECT_ID and DATASET with your actual values
 // ============================================================
 
-const SANITY_PROJECT_ID = 'YOUR_PROJECT_ID';   // <-- replace
+const SANITY_PROJECT_ID = 'qwar7suu';   
 const SANITY_DATASET    = 'production';         // or 'development'
 const SANITY_API_VERSION = '2024-01-01';
 
