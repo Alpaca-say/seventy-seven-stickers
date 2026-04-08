@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Seventy Seven Stickers</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Rajdhani:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="nav-left">
+      <button class="hamburger" onclick="toggleMobileMenu()">&#9776;</button>
+      <div class="logo">SEVENTY<span>77</span>STICKERS</div>
+    </div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#" onclick="filterStickers('all')">ALL</a></li>
+      <li><a href="#" onclick="filterStickers('anime')">ANIME</a></li>
+      <li><a href="#" onclick="filterStickers('game')">GAME ON</a></li>
+      <li><a href="#" onclick="filterStickers('screen')">SCREEN LEGENDS</a></li>
+      <li><a href="#" onclick="filterStickers('chill')">CHILLZONE</a></li>
+      <li><a href="#" onclick="filterStickers('wild')">WILDCARDS</a></li>
+    </ul>
+    <div class="nav-right">
+      <button class="cart-btn" onclick="toggleCart()">
+        <span class="cart-icon">🛒</span>
+        <span class="cart-count" id="cartCount">0</span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-bg-number">77</div>
+    <div class="hero-content">
+      <p class="hero-sub">FRESH DROPS — KES 20 EACH</p>
+      <h1 class="hero-title">STICK YOUR<br/><span>VIBE</span><br/>EVERYWHERE.</h1>
+      <p class="hero-desc">Premium stickers for every mood, every screen, every world.</p>
+      <button class="hero-btn" onclick="document.getElementById('shop').scrollIntoView({behavior:'smooth'})">SHOP NOW</button>
+    </div>
+    <div class="hero-social">
+      <span>IG</span><span>TW</span><span>FB</span>
+    </div>
+  </section>
+
+  <!-- CATEGORY TABS -->
+  <section class="category-section" id="shop">
+    <div class="category-tabs">
+      <button class="tab active" data-cat="all" onclick="filterStickers('all', this)">ALL</button>
+      <button class="tab" data-cat="anime" onclick="filterStickers('anime', this)">ANIME</button>
+      <button class="tab" data-cat="game" onclick="filterStickers('game', this)">GAME ON</button>
+      <button class="tab" data-cat="screen" onclick="filterStickers('screen', this)">SCREEN LEGENDS</button>
+      <button class="tab" data-cat="chill" onclick="filterStickers('chill', this)">CHILLZONE</button>
+      <button class="tab" data-cat="wild" onclick="filterStickers('wild', this)">WILDCARDS</button>
+    </div>
+    <p class="category-desc" id="categoryDesc">Showing all stickers</p>
+  </section>
+
+  <!-- STICKER GRID -->
+  <section class="sticker-grid" id="stickerGrid">
+    <!-- Cards injected by JS -->
+  </section>
+
+  <!-- EMPTY STATE -->
+  <div class="empty-state" id="emptyState" style="display:none;">
+    <p>No stickers in this category yet.<br/>Check back soon 🔥</p>
+  </div>
+
+  <!-- CART SIDEBAR -->
+  <div class="cart-overlay" id="cartOverlay" onclick="toggleCart()"></div>
+  <aside class="cart-sidebar" id="cartSidebar">
+    <div class="cart-header">
+      <h2>YOUR CART</h2>
+      <button onclick="toggleCart()" class="close-cart">✕</button>
+    </div>
+    <div class="cart-items" id="cartItems">
+      <p class="cart-empty">Your cart is empty.</p>
+    </div>
+    <div class="cart-footer" id="cartFooter" style="display:none;">
+      <div class="cart-total">
+        TOTAL: <span id="cartTotal">KES 0</span>
+      </div>
+      <button class="checkout-btn" onclick="checkoutWhatsApp()">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        CHECKOUT ON WHATSAPP
+      </button>
+      <button class="clear-cart-btn" onclick="clearCart()">CLEAR CART</button>
+    </div>
+  </aside>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-logo">SEVENTY<span>77</span>STICKERS</div>
+    <p>© 2025 Seventy Seven Stickers. All stickers are original art.</p>
+    <p>Contact: <a href="https://wa.me/254756600381">+254 756 600 381</a></p>
+  </footer>
+
+  <!-- Toast notification -->
+  <div class="toast" id="toast"></div>
+
+  <script src="sanity.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
