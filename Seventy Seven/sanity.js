@@ -31,8 +31,10 @@ function sanityImageUrl(imageRef, opts = {}) {
   if (!imageRef || !imageRef.asset || !imageRef.asset._ref) return null;
 
   const ref = imageRef.asset._ref;
-  // ref format: image-{id}-{width}x{height}-{format}
-  const [, id, dimensions, fmt] = ref.split('-');
+  const match = ref.match(/^image-(.+)-(\d+x\d+)-(\w+)$/);
+  if (!match) return null;
+
+  const [, id, dimensions, fmt] = match;
   const ext = fmt === 'jpg' ? 'jpg' : fmt;
   let url = `https://cdn.sanity.io/images/${SANITY_PROJECT_ID}/${SANITY_DATASET}/${id}-${dimensions}.${ext}`;
 
