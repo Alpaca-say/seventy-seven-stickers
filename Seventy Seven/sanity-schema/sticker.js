@@ -1,5 +1,4 @@
 // schemas/sticker.js
-// Drop this file into your Sanity Studio's schemas folder
 
 export default {
   name: 'sticker',
