@@ -1,6 +1,5 @@
 // ============================================================
 //  sanity.js — Sanity CDN client (no npm needed, pure fetch)
-//  Replace PROJECT_ID and DATASET with your actual values
 // ============================================================
 
 const SANITY_PROJECT_ID = 'qwar7suu';   
