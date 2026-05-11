@@ -1,9 +1,8 @@
 // ============================================================
-//  app.js — Seventy Seven Stickers
 //  Cart, filtering, Sanity fetch, WhatsApp checkout
 // ============================================================
 
-const WHATSAPP_NUMBER = '254756600381'; // Kenya format (no +)
+const WHATSAPP_NUMBER = '254756600381'; 
 const PRICE_PER_STICKER = 20;
 
 // -------------------------------------------------------
@@ -27,7 +26,7 @@ const BADGE_CLASS = {
 };
 
 // -------------------------------------------------------
-//  DEMO / FALLBACK STICKERS (used when Sanity is not yet set up)
+//  DEMO /  STICKERS 
 // -------------------------------------------------------
 const DEMO_STICKERS = [
   { _id: 'd1', name: 'Naruto Run', category: 'anime',  image: null, emoji: '🍃' },
